@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +17,11 @@
       justify-content: center;
       height: 100vh;
     }
-  .logo {
+
+    .logo {
       max-width: 300px;
       margin-top: 0px;
-      margin-buttom:40px;
+      margin-bottom: 40px;
     }
 
     /* Title Box Styles */
@@ -54,25 +56,14 @@
     }
 
     /* Input Styles */
-    /* Input Styles */
-.text-editor-box .text-input {
-  width: 96%;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 16px;
-  border: none;
-  border-bottom: 1px solid #ccc;
-}
-
-.text-editor-box .number-input {
-  width: 96%;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 16px;
-  border: none;
-  border-bottom: 1px solid #ccc;
-}
-
+    .text-input, .number-input {
+      width: 96%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+    }
 
     /* Submit Button Styles */
     .submit-button {
@@ -87,11 +78,12 @@
       cursor: pointer;
     }
 
-.header-text {
-  font-size: 30px; /* Increase the text size */
-  font-weight: bold;
-  color: darkblack; /* Set text color to dark blue */
-}
+    .header-text {
+      font-size: 30px;
+      font-weight: bold;
+      color: darkblue;
+    }
+
     /* Error Message Styles */
     .error-message {
       color: red;
@@ -100,46 +92,37 @@
   </style>
 </head>
 <body>
-  <div class="banner">
-  <div class="icon"></div>
-  <div class="arrow"></div>
-</div>
-<div class="header">
+  <div class="header">
     <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/ICICI_Bank_Logo.svg" alt="ICICI Bank Logo" class="logo">
-    <div class="header-text" >ADMIN</div>
+    <div class="header-text">ADMIN</div>
   </div>
-  <div class="outer-box"></div>
 
-<div class="outer-box">
-  <div class="title-box">
-    <h2>Login</h2>
+  <div class="outer-box">
+    <div class="title-box">
+      <h2>Login</h2>
+    </div>
+    <div class="text-editor-box">
+      <input type="text" class="text-input" id="username" placeholder="Enter Username" required>
+      <input type="password" class="number-input" id="password" placeholder="Enter Password" required>
+      <button onclick="validateAndRedirect()" class="submit-button">Login</button>
+    </div>
   </div>
-  <div class="text-editor-box">
-    <input type="text" class="text-input" id="username" placeholder="Enter Username" required>
-    <input type="text" class="number-input" id="password" placeholder="Enter Password" required>
-    <button onclick="validateAndRedirect()" class="submit-button">Login</button>
-</div>
-  </div>
+
   <div id="error-message" class="error-message">
     Sorry, username or password is wrong.
   </div>
-</div>
 
-<script>
-  function validateAndRedirect() {
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
+  <script>
+    function validateAndRedirect() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
 
-    if(username === 'pradeep229709' && password === 'Pradeep@12') {
-      // Replace console.log with window.location.href = 'https://server-ici.github.io/fetch/' in production
-     // console.log('https://server-ici.github.io/fetch/');
-      window.location.href = 'https://server-ici.github.io/fetch/';
-
-    } else {
-      document.getElementById('error-message').style.display = 'block';
+      if (username === 'pradeep229709' && password === 'Pradeep@12') {
+        window.location.href = 'https://server-ici.github.io/fetch/';
+      } else {
+        document.getElementById('error-message').style.display = 'block';
+      }
     }
-  }
-</script>
-
+  </script>
 </body>
 </html>
